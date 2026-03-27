@@ -214,18 +214,20 @@ def build_pdf(data, output_path):
     story = []
 
     # ── Cover Page ──
-    story.append(Spacer(1, 1.5 * inch))
+    story.append(Spacer(1, 1.8 * inch))
     story.append(Paragraph("Contract Review Report", styles["CoverTitle"]))
+    story.append(Spacer(1, 40))
     story.append(Paragraph(
         f"Generated {datetime.now().strftime('%B %d, %Y')}",
         styles["CoverSubtitle"]
     ))
+    story.append(Spacer(1, 60))
 
     # Score gauge
     score = data.get("score", 0)
     gauge = create_score_gauge(score)
     story.append(gauge)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 40))
 
     # Grade label
     grade = data.get("grade", "N/A")
@@ -235,7 +237,7 @@ def build_pdf(data, output_path):
     ))
 
     # Disclaimer
-    story.append(Spacer(1, 30))
+    story.append(Spacer(1, 40))
     story.append(Paragraph(
         "LEGAL DISCLAIMER: This analysis is AI-generated and does not constitute legal advice. "
         "It is intended as a starting point for review. Always consult a licensed attorney "

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate a realistic but intentionally flawed freelancer services agreement PDF."""
 
+import utils.transport
+import utils.session
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
